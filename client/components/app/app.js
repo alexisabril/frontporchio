@@ -10,7 +10,7 @@ define(['jquery',
 
 function($, can, io, init, Captain) {
 
-	var socket = io.connect('http://localhost:8000');
+	var socket = io.connect();
 	can.Feathers.connect(socket);
 
 	var captainDfd = Captain.findAll();

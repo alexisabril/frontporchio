@@ -32,4 +32,4 @@ feathers()
 	.use(bodyParser.urlencoded({ extended: true }))
 	.use(feathers.static(__dirname + '/client'))
 	.use('/captains', service)
-	.listen(8000);
+	.listen(process.env.PORT || 8000);
