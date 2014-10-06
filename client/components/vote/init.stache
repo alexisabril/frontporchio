@@ -1,10 +1,9 @@
 <ul class="list-inline">
 {{#each captains}}
 <li>
-	<img src="images/{{name}}.jpg"/>
+	<img src="images/{{name}}.jpg" class="img-circle img-thumbnail"/>
 	<h2>{{name}}</h2>
-	<button can-click="vote">Vote for {{name}}!</button>
-	{{votes}}
+	<button can-click="vote" class="btn btn-primary">Vote for {{name}}!</button>
 </li>
 {{/each}}
 </ul>

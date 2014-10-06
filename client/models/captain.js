@@ -1,8 +1,14 @@
-define(['can', 'can/feathers/model'], function(can) {
+define(['can', 'can/feathers/model', 'can/map/define'], function(can) {
 
 	var Captain = can.Feathers.Model.extend({
 		resource: '/captains'
 	}, {
+		define: {
+			votes: {
+				type: 'number'
+			}
+		},
+
 		upvote: function() {
 			var votes = this.attr('votes');
 			this.attr('votes', votes + 1);

@@ -1,4 +1,9 @@
 <div class="container">
-	<graph-area captains="{captains}"></graph-area>
-	<vote-area captains="{captains}"></vote-area>
+	<div class="col-md-6 col-md-offset-3">
+		<graph-area captains="{captains}"></graph-area>
+	</div>
+
+	<div class="col-md-6 col-md-offset-3">
+		<vote-area captains="{captains}"></vote-area>
+	</div>
 </div>

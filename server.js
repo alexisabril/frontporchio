@@ -4,6 +4,7 @@ var captains = [
 ];
 
 var feathers = require('feathers'),
+bodyParser = require('body-parser'),
 _ = require('lodash');
 
 
@@ -17,8 +18,7 @@ var service = {
 			return captain.id === parseInt(id, 10);
 		});
 
-		// captain.votes = data.votes;
-		captain.votes++;
+		captain.votes = data.votes;
 
 		cb(null, captain);
 	}
@@ -28,6 +28,8 @@ var service = {
 feathers()
 	.configure(feathers.rest())
 	.configure(feathers.socketio())
+	.use(bodyParser.json())
+	.use(bodyParser.urlencoded({ extended: true }))
 	.use(feathers.static(__dirname + '/client'))
 	.use('/captains', service)
 	.listen(8000);

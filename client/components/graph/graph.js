@@ -13,20 +13,28 @@ function(can, init, Chart) {
 			_pieData: null,
 
 			inserted: function(el) {
-				var ctx = el.find('canvas')[0].getContext('2d');
-
-				this._pie = new Chart(ctx).Pie(this.scope.attr('captains').toPieData());
+				this._draw(this.scope.attr('captains').toPieData());
 			},
 
-			'{captains} change': function(captains, ev, which, how) {
+			_draw: function(pieData) {
+				var ctx = this.element.find('canvas')[0].getContext('2d');
+				this._pie = new Chart(ctx).Pie(pieData);
+			},
+
+			'{captains} change': function(captains, ev, which, how, val, old) {
 				if(how === 'set') {
 					var captains = this.scope.attr('captains').toPieData();
 
-					for(var i = 0; i < this._pie.segments.length; i++) {
-						can.extend(this._pie.segments[i], captains[i]);
-					}
+					if(old) {
+						for(var i = 0; i < this._pie.segments.length; i++) {
+							can.extend(this._pie.segments[i], captains[i]);
+						}
 
-					this._pie.update();
+						this._pie.update();
+					}
+					else {
+						this._draw(captains);
+					}
 				}
 			}
 		}
