@@ -1,0 +1,10 @@
+<ul class="list-inline">
+{{#each captains}}
+<li>
+	<img src="images/{{name}}.jpg"/>
+	<h2>{{name}}</h2>
+	<button can-click="vote">Vote for {{name}}!</button>
+	{{votes}}
+</li>
+{{/each}}
+</ul>

@@ -1,0 +1,19 @@
+.list {
+	list-style-type: none;
+	margin: 0;
+}
+
+.list li {
+	float: left;
+	padding: 0;
+	width: 50%;
+}
+
+.list li:last-child {
+	width: 100%;
+}
+
+.list li img {
+	display: block;
+	margin: 0 auto;
+}

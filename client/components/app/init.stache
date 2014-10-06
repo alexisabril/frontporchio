@@ -1,0 +1,4 @@
+<div class="container">
+	<graph-area captains="{captains}"></graph-area>
+	<vote-area captains="{captains}"></vote-area>
+</div>
