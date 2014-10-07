@@ -26,7 +26,7 @@ define(['can', 'can/feathers/model', 'can/map/define'], function(can) {
 
 				data.push({
 					value: captain.attr('votes'),
-					color: name === 'kirk' ? '#A98237' : '#591F1E',
+					color: captain.attr('id') % 2 ? '#591F1E' : '#A98237',
 					label: name
 				});
 			});

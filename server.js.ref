@@ -1,11 +1,12 @@
 var captains = [
-	{ id: 0, name: 'Kirk', votes: 0 },
-	{ id: 1, name: 'Picard', votes: 0 }
+	{ id: 0, name: 'kirk', votes: 0 },
+	{ id: 1, name: 'picard', votes: 0 }
 ];
 
 var feathers = require('feathers'),
-parser = require('body-parser'),
+bodyParser = require('body-parser'),
 _ = require('lodash');
+
 
 var service = {
 	find: function(params, cb) {
@@ -13,8 +14,8 @@ var service = {
 	},
 
 	update: function(id, data, params, cb) {
-		var captain = _.find(captains, function(c) {
-			return c.id === parseInt(id, 10);
+		var captain = _.find(captains, function(captain) {
+			return captain.id === parseInt(id, 10);
 		});
 
 		captain.votes = data.votes;
@@ -23,11 +24,12 @@ var service = {
 	}
 };
 
+
 feathers()
 	.configure(feathers.rest())
 	.configure(feathers.socketio())
-	.use(parser.json())
-	.use(parser.urlencoded({ extended: true }))
-	.use('/captains', service)
+	.use(bodyParser.json())
+	.use(bodyParser.urlencoded({ extended: true }))
 	.use(feathers.static(__dirname + '/client'))
-	.listen(8000);
+	.use('/captains', service)
+	.listen(process.env.PORT || 8000);

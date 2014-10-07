@@ -1,4 +1,4 @@
-.list {
+.reveal ul.list {
 	list-style-type: none;
 	margin: 0;
 }
@@ -16,4 +16,35 @@
 .list li img {
 	display: block;
 	margin: 0 auto;
+}
+
+.showdown {
+	text-align: center;
+}
+
+.showdown img {
+	height: 300px;
+	width: 300px;
+}
+
+.reveal section img.plain {
+	background: initial;
+	border: 0;
+	box-shadow: 0;
+}
+
+.img-thumbnail {
+	display: inline-block;
+	max-width: 100%;
+	height: auto;
+	padding: 4px;
+	line-height: 1.42857143;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+					transition: all .2s ease-in-out;
+}
+.img-circle {
+	border-radius: 50%;
 }
