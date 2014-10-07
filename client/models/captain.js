@@ -22,12 +22,10 @@ define(['can', 'can/feathers/model', 'can/map/define'], function(can) {
 			var data = [];
 
 			this.forEach(function(captain) {
-				var name = captain.attr('name');
-
 				data.push({
 					value: captain.attr('votes'),
 					color: captain.attr('id') % 2 ? '#591F1E' : '#A98237',
-					label: name
+					label: captain.attr('name')
 				});
 			});
 

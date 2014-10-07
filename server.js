@@ -28,6 +28,6 @@ feathers()
 	.configure(feathers.socketio())
 	.use(parser.json())
 	.use(parser.urlencoded({ extended: true }))
-	.use('/captains', service)
 	.use(feathers.static(__dirname + '/client'))
+	.use('/captains', service)
 	.listen(8000);

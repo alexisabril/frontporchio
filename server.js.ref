@@ -7,7 +7,6 @@ var feathers = require('feathers'),
 bodyParser = require('body-parser'),
 _ = require('lodash');
 
-
 var service = {
 	find: function(params, cb) {
 		cb(null, captains);
@@ -23,7 +22,6 @@ var service = {
 		cb(null, captain);
 	}
 };
-
 
 feathers()
 	.configure(feathers.rest())

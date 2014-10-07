@@ -124,3 +124,19 @@ theme: sudodoki/reveal-cleaver-theme
 
 ### theshowdown.herokuapp.com
 #### To the Editor!
+
+--
+
+### Common REST Architecture
+
+<img src="images/rest.png"/>
+
+--
+
+### Feathers in the Middle
+
+<img src="images/feathers.png"/>
+
+--
+
+<img src="images/blooper.jpg"/>
